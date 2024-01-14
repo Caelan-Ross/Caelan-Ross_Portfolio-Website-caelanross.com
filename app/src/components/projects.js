@@ -57,7 +57,7 @@ const Projects = () => {
               paddingLeft={10}
               minHeight="10vh"
             >
-              <h4 justifyContent="center">C# Project MACK | University - <a href='https://github.com/Caelan-Ross/FSWD-CSharp-Final-Project'>Public</a></h4>
+              <h4 justifyContent="center">C# Project MACK | University - <a href='https://github.com/Caelan-Ross/FSWD-CSharp-Final-Project' target="_blank">Public</a></h4>
 
             </Box>
             <h5>
@@ -99,7 +99,7 @@ const Projects = () => {
               paddingLeft={10}
               minHeight="10vh"
             >
-              <h4 justifyContent="center">Capstone Project | University - <a href='https://github.com/Caelan-Ross/FSWD-Capstone-Project'>Public</a></h4>
+              <h4 justifyContent="center">Capstone Project | University - <a href='https://github.com/Caelan-Ross/FSWD-Capstone-Project' target="_blank">Public</a></h4>
 
             </Box>
             <h5>
