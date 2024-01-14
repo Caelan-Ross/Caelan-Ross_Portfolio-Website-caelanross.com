@@ -16,7 +16,9 @@ const ContactForm = () => {
         message: '',
         type: '',
     });
-
+    if(disabled){
+        
+    }
 
     // Shows alert message for form submission feedback
     const toggleAlert = (message, type) => {

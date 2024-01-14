@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Datetime from 'react-datetime';
 
 const Skills = () => {
     const [yearsPassed, setYearsPassed] = useState(null);
