@@ -13,6 +13,54 @@ const Projects = () => {
               paddingLeft={10}
               minHeight="10vh"
             >
+              <h4 justifyContent="center">Protection Product Cost Sheets | First Canadian Insurance – Internal</h4>
+            </Box>
+            <h5>
+              Overview
+            </h5>
+            <Box style={{ paddingLeft: 20 }}>
+              <p>
+              This project was of a larger scale for a singular developer, where I was to take wireframes of blank ‘Cost Sheets’ and convert
+              them into an actively Database connected webpage in Next.TS as to not have to re-make separate PDFs for each different Cost
+              Sheet and pricing update. With a need for multiple different edge cases for styling on each of the different variants of the Cost
+              Sheets for each separate product. This addition saves the company money each time there is a need for adjustments to
+              existing pricing structures for existing Cost Sheets in needing to update the dollar amounts and term lengths. Along with saving
+              money and time when implementing new price groups entirely and needing entire new Cost Sheet documents. As well as
+              providing dealers a singular place to access pricing for all different products they have access to.
+              </p>
+            </Box>
+            <h5>
+              Tools & Techniques
+            </h5>
+            <Box style={{ paddingLeft: 20 }}>
+              <p>
+                <b>Tools:</b> Typescript, Next.TS, ESLint, SQL, MUI, Visual Studio Code.
+              </p>
+              <p>
+                <b>Techniques:</b> Complex custom objects, Database connectivity, Re-usable components, Complex styling.
+              </p>
+            </Box>
+            <h5>
+              Technical Operation Overview
+            </h5>
+            <Box style={{ paddingLeft: 20 }}>
+              <p>
+              The webpage would load with a url query selector specifying the dealer's identification number to grab the associated
+              database information, along with an optional selector to specify if there was only a specific Cost Sheet to view. The page would
+              then send an SQL query to the database and sort/organize all the data into useful objects with sub-maps. After the front-end
+              receives the object list, it sends them off to their respective Cost Sheet components where many different methods of sifting
+              through the data is used to represent the information of each cost sheet appropriately. Of which, it also uses many different
+              re-usable components for re-used sections of each Cost Sheet such as the header, footer, and certain tables.
+              </p>
+            </Box>
+            {/* Seccond Project */}
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              paddingLeft={10}
+              minHeight="10vh"
+            >
               <h4 justifyContent="center">Monthly Report Generator | CreativeMITE – Internal</h4>
 
             </Box>
@@ -47,48 +95,6 @@ const Projects = () => {
                 the data into a Master Excel sheet with pre-written operations to generate a table for use within the report. Then after a Master has been made for
                 each page tracked, the final tables are copied into a Master .Docx file with pre-formatting. Then when the user can input the final details it is unable
                 to grab automatically, doing the entire 8 hotels in ~3 minutes when manually it took around 45 minutes per website.
-              </p>
-            </Box>
-            {/* Seccond Project */}
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              paddingLeft={10}
-              minHeight="10vh"
-            >
-              <h4 justifyContent="center">C# Project MACK | University - <a href='https://github.com/Caelan-Ross/FSWD-CSharp-Final-Project' rel="noreferrer" target="_blank">Public</a></h4>
-
-            </Box>
-            <h5>
-              Overview
-            </h5>
-            <Box style={{ paddingLeft: 20 }}>
-              <p>
-                This project was a collaboration between those within the “EXSM 3943: C# III” class. The object was to create a capstone for the C#
-                stream of classes, which was a console-based vehicle management software for a theoretical company to use.
-              </p>
-            </Box>
-            <h5>
-              Tools & Techniques
-            </h5>
-            <Box style={{ paddingLeft: 20 }}>
-              <p>
-                <b>Tools:</b> C#, Windows Terminal, Visual Studio, .Net Core, .Net Identity, Entity Framework.
-              </p>
-              <p>
-                <b>Techniques:</b> .Csv File Intake, User Experience, C.R.U.D, Team Collaboration.
-              </p>
-            </Box>
-            <h5>
-              Technical Operation Overview
-            </h5>
-            <Box style={{ paddingLeft: 20 }}>
-              <p>
-                The application would allow the user to log in/out and create, read, update, and delete vehicles within the saved inventory on the local database.
-                Which is Entity Framework based, and saved several details about each vehicle, such as the colour, make, model, and other relevant details.
-                They could then delete these vehicles or leave them for later reference. As well, you could mass upload vehicle data through a .Csv in the proper format if
-                the user wished to do so.
               </p>
             </Box>
             {/* Third Project */}

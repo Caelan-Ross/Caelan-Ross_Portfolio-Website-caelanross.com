@@ -24,10 +24,10 @@ const Skills = () => {
             <h2>Skills:</h2>
             {yearsPassed !== null && (
             <ul style={{fontSize:18}}>
-                <li>{yearsPassed + 5}+ Years' Experience in JavaScript, HTML5, CSS, Thorough Code Documentation</li>
-                <li>{yearsPassed + 4}+ Years' Experience in C#, ASP.net, .NET Core MVC, Python, Visual Studio, Git/Github</li>
-                <li>{yearsPassed + 2}+ Years' Experience in React, MySQL, Entity Framework, MariaDB, BitBucket, SourceTree</li>
-                <li>{yearsPassed + 1}+ Years' Experience in Next.JS, C++, Java</li>
+                <li>{yearsPassed + 6}+ Years' Experience in JavaScript, HTML5, CSS, Thorough Code Documentation, Visual Studio, Git/Github</li>
+                <li>{yearsPassed + 3}+ Years' Experience in React, Next.TS/JS, MySQL, Entity Framework, MariaDB, BitBucket, SourceTree</li>
+                <li>{4}+ Years' Experience in C#, ASP.net, .NET Core MVC, Python</li>
+                <li>{1}+ Years' Experience in C++, Java</li>
             </ul>
             )}
         </>

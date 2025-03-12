@@ -37,7 +37,6 @@ const Home = () => {
           <article>
             <Skills/>
             <Projects/>
-
           </article>
         </Box>
       </div>
