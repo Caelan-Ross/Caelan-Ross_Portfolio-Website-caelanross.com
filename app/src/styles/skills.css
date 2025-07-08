@@ -1,0 +1,15 @@
+.skill-tag {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: #d0eaff; /* light blue */
+}

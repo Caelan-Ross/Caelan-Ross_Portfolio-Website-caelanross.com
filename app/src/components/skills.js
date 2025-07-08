@@ -1,37 +1,78 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/skills.css';
 
 const Skills = () => {
-    const [yearsPassed, setYearsPassed] = useState(null);
+  const [yearsPassed, setYearsPassed] = useState(null);
 
-    useEffect(() => {
-        // Set your target date
-        const targetDate = new Date('2024-01-13'); // Replace with your desired date
+  useEffect(() => {
+    const targetDate = new Date('2024-01-13');
+    const currentDate = new Date();
+    const timeDifference = currentDate - targetDate;
+    const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+    setYearsPassed(years);
+  }, []);
 
-        // Get the current date
-        const currentDate = new Date();
+  const languageSkills = [
+    { name: "JavaScript", yearsOffset: 3 },
+    { name: "HTML5", yearsOffset: 3 },
+    { name: "CSS", yearsOffset: 3 },
+    { name: "React", yearsOffset: 2 },
+    { name: "Next.js (TS/JS)", yearsOffset: 2 },
+    { name: "TypeScript", yearsOffset: 2 },
+    { name: "MySQL", yearsOffset: 2 },
+    { name: "MariaDB", yearsOffset: 2 },
+    { name: "Entity Framework", yearsOffset: 2 },
+    { name: "C#", yearsStatic: 3 },
+    { name: "ASP.NET", yearsStatic: 3 },
+    { name: ".NET Core MVC", yearsStatic: 3 },
+    { name: "Python", yearsStatic: 3 },
+    { name: "C++", yearsStatic: 1 },
+    { name: "Java", yearsStatic: 1 },
+  ];
 
-        // Calculate the difference in milliseconds
-        const timeDifference = currentDate - targetDate;
+  const toolSkills = [
+    { name: "Visual Studio", yearsOffset: 3 },
+    { name: "Git / GitHub", yearsOffset: 3 },
+    { name: "BitBucket", yearsOffset: 2 },
+    { name: "SourceTree", yearsOffset: 2 },
+    { name: "Thorough Code Documentation", yearsOffset: 3 },
+  ];
 
-        // Calculate the difference in years
-        const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+  const renderSkillTags = (skills) =>
+    skills.map((skill, index) => {
+      const displayYears =
+        skill.yearsStatic !== undefined
+          ? skill.yearsStatic
+          : yearsPassed + skill.yearsOffset;
 
-        setYearsPassed(years);
-    }, []);
+      return (
+        <div key={index} className="skill-tag">
+          <span>{skill.name}</span>
+          <span style={{ fontSize: '0.85em', color: '#666' }}>
+            ({displayYears}+ yrs)
+          </span>
+        </div>
+      );
+    });
 
-    return (
+  return (
+    <>
+      <h2>Skills</h2>
+      {yearsPassed !== null && (
         <>
-            <h2>Skills:</h2>
-            {yearsPassed !== null && (
-            <ul style={{fontSize:18}}>
-                <li>{yearsPassed + 6}+ Years' Experience in JavaScript, HTML5, CSS, Thorough Code Documentation, Visual Studio, Git/Github</li>
-                <li>{yearsPassed + 3}+ Years' Experience in React, Next.TS/JS, MySQL, Entity Framework, MariaDB, BitBucket, SourceTree</li>
-                <li>{4}+ Years' Experience in C#, ASP.net, .NET Core MVC, Python</li>
-                <li>{1}+ Years' Experience in C++, Java</li>
-            </ul>
-            )}
+          <h4>🧠 Languages & Frameworks</h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
+            {renderSkillTags(languageSkills)}
+          </div>
+
+          <h4>🧰 Tools & Practices</h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {renderSkillTags(toolSkills)}
+          </div>
         </>
-    );
+      )}
+    </>
+  );
 };
 
 export default Skills;
