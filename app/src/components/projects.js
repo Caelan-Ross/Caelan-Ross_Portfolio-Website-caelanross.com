@@ -4,44 +4,69 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 
-const Project = ({ title, subtitle, overview, tools, techniques, techOverview, link }) => (
+const Project = ({
+  title,
+  subtitle,
+  overview,
+  tools,
+  techniques,
+  techOverview,
+  link,
+  projectDate,
+}) => (
   <Box sx={{ mb: 6 }}>
     {/* Project Title */}
     <Typography variant="h4" align="center" gutterBottom>
       {title}
     </Typography>
-
-    {/* Subtitle or Link (below title) */}
-    <Box sx={{ textAlign: 'center', mb: 2 }}>
+    <Box sx={{ textAlign: "center", mb: 2 }}>
+      <Typography variant="subtitle1" color="text.secondary">
+        {subtitle}
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        color="text.secondary"
+        paddingBottom={link ? 1 : 0}
+      >
+        {projectDate}
+      </Typography>
       {link ? (
         <>
-          <Link
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            underline="none"
-          >
-            <Button variant="outlined" size="small">View Repo</Button>
+          <Link href={link} target="_blank" rel="noreferrer" underline="none">
+            <Button variant="outlined" size="small">
+              View Repo
+            </Button>
           </Link>
-          <Typography variant="subtitle1" color="text.secondary" paddingTop={2}>
-            {subtitle}
-          </Typography>
         </>
       ) : (
-        <Typography variant="subtitle1" color="text.secondary">
-          {subtitle}
-        </Typography>
+        <>
+          <Typography
+            variant="subtitle1"
+            color="text.secondary"
+            sx={{ fontStyle: "italic" }}
+          >
+            Internal
+          </Typography>
+        </>
       )}
     </Box>
 
     {/* Main Content */}
     <Box sx={{ px: 4 }}>
-      <Typography variant="h6" gutterBottom>Overview</Typography>
+      <Typography variant="h6" gutterBottom>
+        Overview
+      </Typography>
       <Typography paragraph>{overview}</Typography>
 
-      <Typography variant="h6" gutterBottom>Tools & Techniques</Typography>
-      <Typography><b>Tools:</b> {tools}</Typography>
-      <Typography><b>Techniques:</b> {techniques}</Typography>
+      <Typography variant="h6" gutterBottom>
+        Tools & Techniques
+      </Typography>
+      <Typography>
+        <b>Tools:</b> {tools}
+      </Typography>
+      <Typography>
+        <b>Techniques:</b> {techniques}
+      </Typography>
 
       <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
         Technical Operation Overview
@@ -60,7 +85,8 @@ const Projects = () => {
 
       <Project
         title="Protection Product Cost Sheets"
-        subtitle="First Canadian Insurance – Internal"
+        projectDate="June 2024 - January 2025"
+        subtitle="First Canadian Insurance"
         overview="This project was of a larger scale for a singular developer, where I was to take wireframes of blank 'Cost Sheets' and convert them into a Next.TS-connected database webpage. The goal was to eliminate the need for separate PDFs and support flexible pricing updates across many cost sheet variants. This system saves the company significant time and money by centralizing pricing and simplifying adjustments."
         tools="TypeScript, Next.TS, ESLint, SQL, MUI, Visual Studio Code"
         techniques="Complex custom objects, Database connectivity, Reusable components, Complex styling"
@@ -69,7 +95,8 @@ const Projects = () => {
 
       <Project
         title="Monthly Report Generator"
-        subtitle="CreativeMITE – Internal"
+        projectDate="September - December 2022"
+        subtitle="CreativeMITE"
         overview="This project automated a time-consuming monthly process of generating SEO heatmap reports for 8 hotel clients. Previously taking 45 minutes per hotel, this solution now does all 8 in under 3 minutes, saving over $1500/month in labor alone."
         tools="C#, Windows Terminal, Visual Studio, Crazy Egg, VBA"
         techniques="Automated file extraction, Automated file tree generation, Data processing with macros"
@@ -78,6 +105,7 @@ const Projects = () => {
 
       <Project
         title="Capstone Project"
+        projectDate="July - August 2023"
         link="https://github.com/Caelan-Ross/FSWD-Capstone-Project"
         subtitle="University of Alberta - Full-Stack Web Development"
         overview="This was a group project built for a local business, 'The Battery Doctor', to create a full invoice and customer management system as a final capstone project for the Full-Stack Web Development course."

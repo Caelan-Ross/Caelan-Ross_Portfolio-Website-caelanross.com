@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/skills.css'; // keep this for .skill-tag styling
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from "react";
+import "../styles/skills.css"; // keep this for .skill-tag styling
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const Skills = () => {
   const [yearsPassed, setYearsPassed] = useState(null);
 
   useEffect(() => {
-    const targetDate = new Date('2024-01-13');
+    const targetDate = new Date("2024-01-13");
     const currentDate = new Date();
     const timeDifference = currentDate - targetDate;
     const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
@@ -50,7 +50,7 @@ const Skills = () => {
       return (
         <div key={index} className="skill-tag">
           <span>{skill.name}</span>
-          <span style={{ fontSize: '0.85em', color: '#666' }}>
+          <span style={{ fontSize: "0.85em", color: "#666" }}>
             ({displayYears}+ yrs)
           </span>
         </div>
@@ -68,14 +68,14 @@ const Skills = () => {
           <Typography variant="h5" sx={{ mb: 2 }}>
             🧠 Languages & Frameworks
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px', mb: 4 }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: "10px", mb: 4 }}>
             {renderSkillTags(languageSkills)}
           </Box>
 
           <Typography variant="h5" sx={{ mb: 2 }}>
             🧰 Tools & Practices
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
             {renderSkillTags(toolSkills)}
           </Box>
         </Box>
