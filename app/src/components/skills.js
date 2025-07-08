@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/skills.css';
+import '../styles/skills.css'; // keep this for .skill-tag styling
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 const Skills = () => {
   const [yearsPassed, setYearsPassed] = useState(null);
@@ -57,20 +59,26 @@ const Skills = () => {
 
   return (
     <>
-      <h2>Skills</h2>
-      {yearsPassed !== null && (
-        <>
-          <h4>🧠 Languages & Frameworks</h4>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
-            {renderSkillTags(languageSkills)}
-          </div>
+      <Typography variant="h2" sx={{ pl: 4, pb: 4 }}>
+        Skills:
+      </Typography>
 
-          <h4>🧰 Tools & Practices</h4>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+      {yearsPassed !== null && (
+        <Box sx={{ px: 4 }}>
+          <Typography variant="h5" sx={{ mb: 2 }}>
+            🧠 Languages & Frameworks
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px', mb: 4 }}>
+            {renderSkillTags(languageSkills)}
+          </Box>
+
+          <Typography variant="h5" sx={{ mb: 2 }}>
+            🧰 Tools & Practices
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {renderSkillTags(toolSkills)}
-          </div>
-          <br />
-        </>
+          </Box>
+        </Box>
       )}
     </>
   );

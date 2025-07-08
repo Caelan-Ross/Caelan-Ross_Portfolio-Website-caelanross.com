@@ -3,7 +3,6 @@ body{
     background-color: #888c9d7a;
 }
 
-h1, h2{
-    font-family: "Space Mono", monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Mono', monospace;
 }
-
