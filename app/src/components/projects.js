@@ -79,7 +79,7 @@ const Project = ({
 const Projects = () => {
   return (
     <>
-      <Typography variant="h2" sx={{ pl: 4, pb: 4 }}>
+      <Typography variant="h2" sx={{ pl: 4, pb: 4 }} paddingTop={4}>
         Projects:
       </Typography>
 
