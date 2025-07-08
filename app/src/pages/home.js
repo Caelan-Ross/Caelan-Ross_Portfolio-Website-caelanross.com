@@ -17,7 +17,7 @@ const Home = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          minHeight="20vh"
+          paddingTop={10}
         >
           <h1>Portfolio</h1>
         </Box>
@@ -25,8 +25,17 @@ const Home = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-        ><h2>Caelan Ross - Full-Stack Web Developer</h2>
+        ><h2>Caelan Ross - Web Developer</h2>
         </Box>
+        {/* Horizontal divider line */}
+        <Box
+          sx={{
+            borderBottom: '5px solid black',
+            margin: '0 auto',
+            marginTop: '10px',
+            marginBottom: '20px',
+          }}
+        />
         <Box
           display="flex"
           justifyContent="Left"

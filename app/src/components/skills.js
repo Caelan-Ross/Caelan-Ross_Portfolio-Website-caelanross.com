@@ -69,6 +69,7 @@ const Skills = () => {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {renderSkillTags(toolSkills)}
           </div>
+          <br />
         </>
       )}
     </>
