@@ -72,7 +72,6 @@ const ContactForm = () => {
       <div className="container">
         <section class="ftco-section">
           <div class="container">
-            <div class="row justify-content-center"></div>
             <div class="row justify-content-center">
               <div class="col-lg-10">
                 <div class="wrapper">
