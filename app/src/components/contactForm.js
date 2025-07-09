@@ -192,11 +192,7 @@ const ContactForm = () => {
                             </div>
                             <div class="col-md-12">
                               <div class="form-group">
-                                <Button
-                                  variant="outlined"
-                                  size="small"
-                                  type="submit"
-                                >
+                                <Button variant="outlined" type="submit">
                                   Submit
                                 </Button>
                                 <div class="submitting"></div>
