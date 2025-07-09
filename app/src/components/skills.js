@@ -49,8 +49,10 @@ const Skills = () => {
 
       return (
         <div key={index} className="skill-tag">
-          <span>{skill.name}</span>
-          <span style={{ fontSize: "0.85em", color: "#666" }}>
+          <span style={{ userSelect: "none" }}>{skill.name}</span>
+          <span
+            style={{ fontSize: "0.85em", color: "#666", userSelect: "none" }}
+          >
             ({displayYears}+ yrs)
           </span>
         </div>
