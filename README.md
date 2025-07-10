@@ -1,6 +1,6 @@
 # Caelan Ross – Portfolio Website
 
-This is my personal portfolio website built with **React.js** and **Bootstrap**. It features a clean, modern layout to showcase my experience as a developer, and includes a contact form for direct communication.
+This is my personal portfolio website built with **React.js** and **MUI**. It features a clean, modern layout to showcase my experience as a developer, and includes a contact form for direct communication.
 
 🔗 **Live Site**: [https://caelanross.com](https://caelanross.com)
 
@@ -23,8 +23,8 @@ This is my personal portfolio website built with **React.js** and **Bootstrap**.
 ## 🛠️ Tech Stack
 
 - **Frontend Framework**: React.js
-- **Styling**: Bootstrap 5
-- **Form Handling**: HTML form elements with custom logic (e.g., email API or mailto)
+- **Styling**: MUI
+- **Form Handling**: HTML form elements with custom logic (mailjs)
 
 ---
 

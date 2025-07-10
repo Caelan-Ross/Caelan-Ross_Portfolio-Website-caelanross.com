@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../images/logo-no-background.png";
 
 const StyledNavLink = styled(NavLink)(({ theme }) => ({
@@ -65,7 +65,6 @@ const Navbar = () => {
         </Container>
       </AppBar>
       <Toolbar sx={{ minHeight: "60px" }} />
-      <Outlet />
     </>
   );
 };

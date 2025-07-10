@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/home.js';
-import Contact from "./pages/contact.js";
-import NoPage from "./pages/nopage.js";
-import Navbar from "./components/navbar.js";
-import './styles/style.css'
 import { GlobalStyles } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/layout.js";
+import Contact from "./pages/contact.js";
+import Home from "./pages/home.js";
+import NoPage from "./pages/nopage.js";
+import "./styles/style.css";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           body: {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
+            margin: 0,
           },
           "body::-webkit-scrollbar": {
             display: "none",
@@ -22,7 +23,7 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
