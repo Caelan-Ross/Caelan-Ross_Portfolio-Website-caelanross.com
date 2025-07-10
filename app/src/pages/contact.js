@@ -1,6 +1,6 @@
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import ContactForm from "../components/contactForm";
-import * as React from 'react';
-import Box from '@mui/material/Box';
 
 const Contact = () => {
   return (
@@ -13,9 +13,9 @@ const Contact = () => {
         pt: { xs: 4, sm: 6, md: 8 },
       }}
     >
-      <Box textAlign="center" mb={2}>
-        <h1 style={{ margin: 0 }}>Contact</h1>
-      </Box>
+      <Typography variant="h1" align="center" sx={{ mb: 2 }}>
+        Contact Me
+      </Typography>
       <Box
         sx={{
           borderBottom: "5px solid black",

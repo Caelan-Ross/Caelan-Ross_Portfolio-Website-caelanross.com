@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Projects from '../components/projects';
 import Skills from '../components/skills';
 import About from "../components/about";
-
+import Typography from "@mui/material/Typography";
 const Home = () => {
   return (
     <Box
@@ -15,9 +15,9 @@ const Home = () => {
         pt: { xs: 4, sm: 6, md: 8 },
       }}
     >
-      <Box textAlign="center" mb={2}>
-        <h1 style={{ margin: 0 }}>Portfolio</h1>
-      </Box>
+      <Typography variant="h1" align="center" sx={{ mb: 2 }}>
+        Caelan Ross
+      </Typography>
       <Box
         sx={{
           borderBottom: "5px solid black",
@@ -26,9 +26,9 @@ const Home = () => {
           width: "100%",
         }}
       />
-      <Box textAlign="center" mb={2}>
-        <h2 style={{ margin: 0 }}>Caelan Ross - Web Developer</h2>
-      </Box>
+      <Typography variant="h4" align="center" sx={{ mb: 2 }}>
+        Web Developer
+      </Typography>
       <Box>
         <article>
           <About />
