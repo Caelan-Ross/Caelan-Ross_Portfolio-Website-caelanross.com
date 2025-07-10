@@ -83,7 +83,7 @@ const Projects = () => {
       </Typography>
 
       <Project
-        title="Platinum Appearance Protection Plan"
+        title="Platinum Appearance Service Plan"
         projectDate="May 2025 - July 2025"
         subtitle="First Canadian Insurance"
         overview="This project was to meet compliance with the insurance regulator's new requirements to permit the sale of the sub-product within Alberta. It combined two existing products into the new PASP, requiring a much more complex logic than the two sub-products did individually. The goal was to create a single product that could be sold by dealers to customers, while still allowing for the same level of customization and flexibility as the previous sub-products."
