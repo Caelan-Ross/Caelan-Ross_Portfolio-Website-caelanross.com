@@ -1,8 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
 const Project = ({
   title,
@@ -84,10 +83,20 @@ const Projects = () => {
       </Typography>
 
       <Project
+        title="Platinum Appearance Protection Plan"
+        projectDate="May 2025 - July 2025"
+        subtitle="First Canadian Insurance"
+        overview="This project was to meet compliance with the insurance regulator's new requirements to permit the sale of the sub-product within Alberta. It combined two existing products into the new PASP, requiring a much more complex logic than the two sub-products did individually. The goal was to create a single product that could be sold by dealers to customers, while still allowing for the same level of customization and flexibility as the previous sub-products."
+        tools="TypeScript, Next.TS, ESLint, SQL, JavaScript, Perl, Visual Studio Code"
+        techniques="Complex business logic, Database connectivity, Integration"
+        techOverview="The front end uses the typical entry form to collect dealer and customer information, which is then processed by the back end. The back end uses a complex set of business rules to determine if the product is PASP and rather than the two sub-products. The information iZs then sent to the backend for processing into the database for later use in remittances."
+      />
+
+      <Project
         title="Protection Product Cost Sheets"
         projectDate="June 2024 - January 2025"
         subtitle="First Canadian Insurance"
-        overview="This project was of a larger scale for a singular developer, where I was to take wireframes of blank 'Cost Sheets' and convert them into a Next.TS-connected database webpage. The goal was to eliminate the need for separate PDFs and support flexible pricing updates across many cost sheet variants. This system saves the company significant time and money by centralizing pricing and simplifying adjustments."
+        overview="This project was of a larger scale for a singular developer, where I was to take wire-frames of blank 'Cost Sheets' and convert them into a Next.TS-connected database webpage. The goal was to eliminate the need for separate PDFs and support flexible pricing updates across many cost sheet variants. This system saves the company significant time and money by centralizing pricing and simplifying adjustments."
         tools="TypeScript, Next.TS, ESLint, SQL, MUI, Visual Studio Code"
         techniques="Complex custom objects, Database connectivity, Reusable components, Complex styling"
         techOverview="The front end uses a query string to fetch and render dealer-specific data via SQL. The result set is mapped into structured objects and dispatched to different dynamic cost sheet components. Each component renders headers, footers, tables, and variants using reusable MUI-based components for maintainability."
