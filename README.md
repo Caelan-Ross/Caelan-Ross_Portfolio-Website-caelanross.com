@@ -2,7 +2,7 @@
 
 This is my personal portfolio website built with **React.js** and **MUI**. It features a clean, modern layout to showcase my experience as a developer, and includes a contact form for direct communication.
 
-🔗 **Live Site**: [https://caelanross.com](https://caelanross.com)
+🔗 **Live Site**: [https://caelanross.netlify.app](https://caelanross.netlify.app)
 
 ---
 
@@ -56,7 +56,7 @@ npm run build
 ```
 
 ### 📫 Contact
-- Website: https://caelanross.com
+- Website: https://caelanross.netlify.app
 
 - Email: caelan.ross@gmail.com
 
