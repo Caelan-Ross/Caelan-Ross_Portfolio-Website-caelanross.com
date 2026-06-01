@@ -103,6 +103,15 @@ const Projects = () => {
       />
 
       <Project
+        title="Pre-Authorized Credit Modernization"
+        projectDate="January 2026 - June 2026"
+        subtitle="First Canadian Insurance"
+        overview="This project overhauled a legacy pre-authorized credit system, expanding its data model and adding secure cross-origin API access for the legacy frontend. The goal was to modernize the system without breaking existing functionality — preserving backward compatibility while doubling the column capacity of the core table."
+        techStack="Next.js (TS), DB2, SQL, ESLint, MUI, Visual Studio Code"
+        techOverview="The database layer was extended with 6 new DB2 value-definition tables (averaging 6 columns each) to support a schema expansion from 10 to 20 columns on the main table. A dynamically generated popup was built in vanilla JavaScript for the legacy system — consuming internal APIs with no framework dependency. A new API endpoint was developed for secure cross-origin internal content delivery, authenticated via HMAC-based secret key pairs and request timestamps to validate request authenticity."
+      />
+
+      <Project
         title="Monthly Report Generator"
         projectDate="September - December 2022"
         subtitle="CreativeMITE"
