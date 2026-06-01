@@ -65,10 +65,10 @@ const FEATURED_PROJECT = {
   subtitle: "First Canadian Insurance",
   projectDate: "January 2026 – June 2026",
   overview:
-    "Overhauled a legacy pre-authorized credit system, expanding its data model and adding secure cross-origin API access for the legacy frontend — preserving full backward compatibility while doubling the core table's column capacity.",
-  techStack: "Next.js (TS), DB2, SQL, ESLint, MUI, Visual Studio Code",
+    "Expanded a legacy pre-authorized credit system from 10 to 20 columns while maintaining full backward compatibility. Added a modern UI layer and secure cross-origin API access for the legacy frontend.",
+  techStack: "JavaScript, HTMX, SQL, REST API",
   techOverview:
-    "Extended the database layer with 6 new DB2 value-definition tables (avg. 6 columns each) to support a schema expansion from 10 to 20 columns. Built a dynamically generated popup in vanilla JavaScript for the legacy system consuming internal APIs with no framework dependency. Developed a new API endpoint using HMAC-based secret key pairs and request timestamps for secure cross-origin content delivery.",
+    "Designed 6 DB2 value-definition lookup tables to support the schema expansion. Built a vanilla JavaScript popup consuming internal APIs with no framework dependency. Developed an API endpoint using HMAC-based key pairs and request timestamps for cross-origin authentication.",
 };
 
 const FeaturedProjectCard = () => {

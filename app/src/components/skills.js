@@ -23,8 +23,10 @@ const Skills = () => {
         { name: "React", yearsOffset: 2 },
         { name: "Next.js", yearsOffset: 2 },
         { name: "HTML5", yearsOffset: 3 },
-        { name: "CSS", yearsOffset: 3 },
+        { name: "CSS3", yearsOffset: 3 },
+        { name: "Tailwind", yearsStatic: 1 },
         { name: "MUI", yearsOffset: 2 },
+        { name: "HTMX", yearsStatic: 1 },
       ],
     },
     {
@@ -32,7 +34,12 @@ const Skills = () => {
       skills: [
         { name: "C#", yearsStatic: 3 },
         { name: "ASP.NET Core MVC", yearsStatic: 3 },
+        { name: "Perl", yearsStatic: 2 },
         { name: "Python", yearsStatic: 3 },
+        { name: "REST API Design", yearsStatic: 2 },
+        { name: "RabbitMQ", yearsStatic: 1 },
+        { name: "ODBC", yearsStatic: 2 },
+        { name: "IBM DB2", yearsStatic: 2 },
         { name: "SQL", yearsOffset: 2 },
         { name: "MySQL", yearsOffset: 2 },
         { name: "MariaDB", yearsOffset: 2 },
@@ -48,6 +55,7 @@ const Skills = () => {
         { name: "Docker Compose", yearsStatic: 1 },
         { name: "Ubuntu Server", yearsStatic: 1 },
         { name: "Linux", yearsStatic: 2 },
+        { name: "IIS", yearsStatic: 2 },
       ],
     },
     {
@@ -78,9 +86,11 @@ const Skills = () => {
     {
       label: "📐 Dev Practices",
       skills: [
+        { name: "Agile / SCRUM", yearsStatic: 2 },
         { name: "Code Reviews", yearsOffset: 2 },
+        { name: "Microservices", yearsStatic: 1 },
         { name: "Reusable Components", yearsOffset: 2 },
-        { name: "Database Integration", yearsOffset: 2 },
+        { name: "Database Design", yearsOffset: 2 },
         { name: "Automation", yearsOffset: 2 },
       ],
     },

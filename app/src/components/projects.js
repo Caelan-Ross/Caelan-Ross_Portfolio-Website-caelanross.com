@@ -207,45 +207,45 @@ const Projects = () => {
           link="https://github.com/Caelan-Ross/gcal-embed"
           projectDate="August 2025 – Present"
           subtitle="Personal Project"
-          overview="A self-hosted infrastructure project running media, document management, and file storage services. Built on Proxmox for virtualization, TrueNAS for storage, and Docker for service deployment — all on consumer hardware at home."
+          overview="Runs production-grade self-hosted services across multiple Proxmox hypervisors with 5+ VMs and LXC containers. Manages ~16TB of NAS-backed storage and multi-service Docker stacks including Jellyfin, Paperless-ngx, and Immich."
           techStack="Proxmox, TrueNAS SCALE, ZFS, Docker Compose, Ubuntu Server, Linux, Rclone, SMB/CIFS"
-          techOverview="Runs on a three-node Proxmox cluster with dedicated LXC containers and VMs per service. Storage is handled by TrueNAS SCALE over SMB, with ZFS RAIDZ1 providing redundancy across ~16TB. Docker Compose manages multi-container service stacks with NAS-backed volumes. Resolved a hardware-level NIC instability bug (Intel I219-LM) by disabling offloading via bridge config to eliminate persistent drops."
+          techOverview="TrueNAS SCALE handles storage via ZFS RAIDZ1 and SMB shares, with automated cloud backup via Rclone. Docker Compose stacks map persistent volumes to NAS storage. Diagnosed a hardware-level NIC instability bug (Intel I219-LM) by disabling offloading via bridge config to eliminate recurring network drops."
         />
 
         <Project
           title="Platinum Appearance Service Plan"
           projectDate="May – July 2025"
           subtitle="First Canadian Insurance"
-          overview="Compliance-driven project combining two existing sub-products into a new PASP to meet insurance regulator requirements for Alberta sales — requiring significantly more complex business logic than the two sub-products individually."
+          overview="Compliance-driven project combining two existing sub-products into a new PASP to meet insurance regulator requirements for Alberta sales, requiring significantly more complex business logic than the two sub-products individually."
           techStack="TypeScript, Next.js, ESLint, SQL, JavaScript, Perl, Visual Studio Code"
-          techOverview="The front end uses the typical entry form to collect dealer and customer information, which is then processed by a complex set of business rules to determine PASP eligibility. Data is sent to the backend for processing into the database for later use in remittances."
+          techOverview="The front end uses the standard entry form to collect dealer and customer information, processed by a complex set of business rules to determine PASP eligibility. Data is passed to the backend for processing into the database for later use in remittances."
         />
 
         <Project
           title="Protection Product Cost Sheets"
           projectDate="June 2024 – January 2025"
           subtitle="First Canadian Insurance"
-          overview="Converted wire-frames of blank Cost Sheets into a Next.js-connected database webpage, eliminating separate PDFs and enabling flexible pricing updates across many cost sheet variants — saving the company significant time and money."
-          techStack="TypeScript, Next.js, ESLint, SQL, MUI, Visual Studio Code"
-          techOverview="The front end uses a query string to fetch and render dealer-specific data via SQL. The result set is mapped into structured objects dispatched to different dynamic cost sheet components. Each component renders headers, footers, tables, and variants using reusable MUI-based components for maintainability."
+          overview="Eliminated manual PDF updates by converting static cost sheets into a Next.js-connected database system supporting 10+ product variants. Enabled real-time dealer pricing lookup without touching a file."
+          techStack="Next.js (TS), SQL, ESLint, MUI, VS Code"
+          techOverview="Built reusable Next.js components for each cost sheet variant. Dealer-specific data is fetched at render time via URL-based query selectors backed by SQL APIs. Data parsers and field mappings handle 10+ product sheet variants with minimal per-variant code, reducing update effort by 100%."
         />
 
         <Project
           title="Pre-Authorized Credit Modernization"
           projectDate="January 2026 – June 2026"
           subtitle="First Canadian Insurance"
-          overview="Overhauled a legacy pre-authorized credit system, expanding its data model and adding secure cross-origin API access for the legacy frontend — preserving full backward compatibility while doubling the core table's column capacity."
-          techStack="Next.js (TS), DB2, SQL, ESLint, MUI, Visual Studio Code"
-          techOverview="Extended the database layer with 6 new DB2 value-definition tables (avg. 6 columns each) to support a schema expansion from 10 to 20 columns. Built a dynamically generated popup in vanilla JavaScript for the legacy system consuming internal APIs with no framework dependency. Developed a new API endpoint using HMAC-based secret key pairs and request timestamps for secure cross-origin content delivery."
+          overview="Expanded a legacy pre-authorized credit system from 10 to 20 columns while maintaining full backward compatibility. Added a modern UI layer and secure cross-origin API access for the legacy frontend."
+          techStack="JavaScript, HTMX, SQL, REST API"
+          techOverview="Designed 6 DB2 value-definition lookup tables to support the schema expansion. Built a vanilla JavaScript popup consuming internal APIs with no framework dependency. Developed an API endpoint using HMAC-based key pairs and request timestamps for cross-origin authentication."
         />
 
         <Project
           title="Monthly Report Generator"
           projectDate="September – December 2022"
           subtitle="CreativeMITE"
-          overview="Automated a time-consuming monthly SEO heatmap reporting process across 8 hotel clients. Reduced per-cycle time from 6 hours to under 5 minutes, saving over $1,500/month in labor."
-          techStack="C#, Windows Terminal, Visual Studio, Crazy Egg, VBA"
-          techOverview="Consumes .zip exports from Crazy Egg, unpacks and processes the Excel files inside, then populates a master Excel sheet with macros. Outputs formatted tables into a Word template file with minimal manual entry."
+          overview="Cut reporting time from 6 hours to under 5 minutes per cycle across 8+ hotel properties, saving $1,500+ per month. Fully automated: ZIP extraction, Excel processing, and Word population with minimal manual input."
+          techStack="C#, VBA, Crazy Egg, Visual Studio, Windows Terminal"
+          techOverview="Consumes Crazy Egg ZIP exports, unpacks and processes the Excel files inside, then aggregates analytics across hotel properties into structured tables and graphs. Outputs formatted data into a Word template."
         />
 
         <Project
