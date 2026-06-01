@@ -6,14 +6,16 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
 const Footer = () => {
-  const link = "https://github.com/Caelan-Ross/Caelan-Ross_Portfolio-Website-caelanross.com";
+  const link =
+    "https://github.com/Caelan-Ross/Caelan-Ross_Portfolio-Website-caelanross.com";
 
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#303039",
-        color: "#ccc9d3",
+        backgroundColor: "#161b22",
+        borderTop: "1px solid #30363d",
+        color: "#8b949e",
         py: 2,
         mt: "auto",
       }}
@@ -27,18 +29,13 @@ const Footer = () => {
           flexWrap: "wrap",
         }}
       >
-        <Typography variant="body2" sx={{ fontSize: 14 }}>
+        <Typography variant="body2" sx={{ fontSize: 13 }}>
           © {new Date().getFullYear()} Caelan Ross
         </Typography>
 
         <Stack direction="row" spacing={2}>
-          <Link
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            underline="none"
-          >
-            <Button variant="outlined" size="small">
+          <Link href={link} target="_blank" rel="noreferrer" underline="none">
+            <Button variant="outlined" size="small" sx={{ fontSize: "0.75rem", textTransform: "none" }}>
               View Repo
             </Button>
           </Link>

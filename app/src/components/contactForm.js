@@ -1,10 +1,52 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
-import "../styles/contactForm.css"
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Collapse from "@mui/material/Collapse";
+import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import EmailIcon from "@mui/icons-material/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PhoneIcon from "@mui/icons-material/Phone";
+import SendIcon from "@mui/icons-material/Send";
+
+const INFO_ITEMS = [
+  {
+    icon: <PhoneIcon sx={{ color: "#58a6ff", fontSize: 20 }} />,
+    label: "Phone",
+    value: "+1 (780) 554-8861",
+    href: "tel:+17805548861",
+  },
+  {
+    icon: <EmailIcon sx={{ color: "#58a6ff", fontSize: 20 }} />,
+    label: "Email",
+    value: "caelan.ross@gmail.com",
+    href: "mailto:caelan.ross@gmail.com",
+  },
+  {
+    icon: <GitHubIcon sx={{ color: "#58a6ff", fontSize: 20 }} />,
+    label: "GitHub",
+    value: "github.com/Caelan-Ross",
+    href: "https://github.com/Caelan-Ross",
+  },
+];
+
+const fieldSx = {
+  "& .MuiOutlinedInput-root": {
+    backgroundColor: "#0d1117",
+    "& fieldset": { borderColor: "#30363d" },
+    "&:hover fieldset": { borderColor: "#58a6ff60" },
+    "&.Mui-focused fieldset": { borderColor: "#58a6ff" },
+  },
+  "& .MuiInputLabel-root": { color: "#8b949e" },
+  "& .MuiInputLabel-root.Mui-focused": { color: "#58a6ff" },
+  "& .MuiOutlinedInput-input": { color: "#e6edf3" },
+  "& .MuiFormHelperText-root": { color: "#f47067" },
+};
 
 const ContactForm = () => {
   const {
@@ -13,251 +55,169 @@ const ContactForm = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const [disabled, setDisabled] = useState(false);
-  const [alertInfo, setAlertInfo] = useState({
-    display: false,
-    message: "",
-    type: "",
-    });
-    if (disabled) {
-  }
 
-  // Shows alert message for form submission feedback
-  const toggleAlert = (message, type) => {
-    setAlertInfo({ display: true, message, type });
+  const [submitting, setSubmitting] = useState(false);
+  const [alert, setAlert] = useState({ open: false, message: "", severity: "success" });
 
-    // Hide alert after 5 seconds
-    setTimeout(() => {
-      setAlertInfo({ display: false, message: "", type: "" });
-    }, 5000);
+  const showAlert = (message, severity) => {
+    setAlert({ open: true, message, severity });
+    setTimeout(() => setAlert((a) => ({ ...a, open: false })), 5000);
   };
 
-  // Function called on submit that uses emailjs to send email of valid contact form
   const onSubmit = async (data) => {
-    // Destrcture data object
-    const { name, email, subject, message } = data;
+    setSubmitting(true);
     try {
-      // Disable form while processing submission
-      setDisabled(true);
-
-      const templateParams = {
-        name,
-        email,
-        subject,
-        message,
-      };
       await emailjs.send(
         "service_am3pm6d",
         "template_zt0o7i3",
-        templateParams,
+        { name: data.name, email: data.email, subject: data.subject, message: data.message },
         "DwHZcS0TXC7xPA8xH"
       );
-
-      // Display success alert
-      toggleAlert("Form submission was successful!", "success");
-    } catch (e) {
-      console.error(e);
-      // Display error alert
-      toggleAlert("Uh oh. Something went wrong.", "danger");
-    } finally {
-      // Re-enable form submission
-      setDisabled(false);
-      // Reset contact form fields after submission
+      showAlert("Message sent successfully!", "success");
       reset();
+    } catch {
+      showAlert("Something went wrong. Please try again.", "error");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
-    <div className="ContactForm">
-      <div className="container">
-        <section class="ftco-section">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-10">
-                <div class="wrapper">
-                  <div class="row no-gutters">
-                    <div class="col-md-6 d-flex align-items-stretch">
-                      <div class="contact-wrap w-100 p-md-5 p-4 py-5">
-                        <div id="form-message-warning" class="mb-4"></div>
-                        <div id="form-message-success" class="mb-4">
-                          Your message was sent, thank you!
-                        </div>
-                        <form
-                          id="contactForm"
-                          name="contactForm"
-                          class="contactForm"
-                          onSubmit={handleSubmit(onSubmit)}
-                          noValidate
-                        >
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <input
-                                  type="text"
-                                  name="name"
-                                  class="form-control"
-                                  id="name"
-                                  {...register("name", {
-                                    required: {
-                                      value: true,
-                                      message: "Please enter your name",
-                                    },
-                                    maxLength: {
-                                      value: 30,
-                                      message:
-                                        "Please use 30 characters or less",
-                                    },
-                                  })}
-                                  className="form-control formInput"
-                                  placeholder="Name"
-                                ></input>
-                                {errors.name && (
-                                  <span className="errorMessage">
-                                    {errors.name.message}
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  name="email"
-                                  id="email"
-                                  {...register("email", {
-                                    required: true,
-                                    pattern:
-                                      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                                  })}
-                                  className="form-control formInput"
-                                  placeholder="Email Address"
-                                ></input>
-                                {errors.email && (
-                                  <span className="errorMessage">
-                                    Please enter a valid email address
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  name="subject"
-                                  id="subject"
-                                  {...register("subject", {
-                                    required: {
-                                      value: true,
-                                      message: "Please enter a subject",
-                                    },
-                                    maxLength: {
-                                      value: 75,
-                                      message:
-                                        "Subject cannot exceed 75 characters",
-                                    },
-                                  })}
-                                  className="form-control formInput"
-                                  placeholder="Subject"
-                                ></input>
-                                {errors.subject && (
-                                  <span className="errorMessage">
-                                    {errors.subject.message}
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <textarea
-                                  name="message"
-                                  class="form-control"
-                                  id="message"
-                                  cols="30"
-                                  rows="6"
-                                  {...register("message", {
-                                    required: true,
-                                  })}
-                                  className="form-control formInput"
-                                  placeholder="Message"
-                                ></textarea>
-                                {errors.message && (
-                                  <span className="errorMessage">
-                                    Please enter a message
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <Button variant="outlined" type="submit">
-                                  Submit
-                                </Button>
-                                <div class="submitting"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                      <div class="info-wrap w-100 p-md-5 p-4 py-5 img">
-                        <h3>Contact Information</h3>
-                        <p class="mb-4">
-                          Reach out for potential business inquiries.
-                        </p>
-                        <div class="dbox w-100 d-flex align-items-center">
-                          <div class="icon d-flex align-items-center justify-content-center">
-                            <PhoneIcon />
-                          </div>
-                          <div class="text pl-3">
-                            <p>
-                              <span>Phone:</span>{" "}
-                              <a href="tel://1234567920">+1 (780) 554-8861</a>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="dbox w-100 d-flex align-items-center">
-                          <div class="icon d-flex align-items-center justify-content-center">
-                            <EmailIcon />
-                          </div>
-                          <div class="text pl-3">
-                            <p>
-                              <span>Email:</span>{" "}
-                              <a href="mailto:info@yoursite.com">
-                                caelan.ross@gmail.com
-                              </a>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      {alertInfo.display && (
-        <div
-          className={`alert alert-${alertInfo.type} alert-dismissible mt-5`}
-          role="alert"
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "1fr auto" },
+        gap: 3,
+        alignItems: "start",
+      }}
+    >
+      {/* Form card */}
+      <Box
+        sx={{
+          backgroundColor: "#161b22",
+          border: "1px solid #30363d",
+          borderRadius: 2,
+          p: { xs: 3, sm: 4 },
+        }}
+      >
+        <Collapse in={alert.open} sx={{ mb: alert.open ? 2 : 0 }}>
+          <Alert severity={alert.severity} variant="filled" sx={{ borderRadius: 1.5 }}>
+            {alert.message}
+          </Alert>
+        </Collapse>
+
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}
         >
-          {alertInfo.message}
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-            onClick={() =>
-              setAlertInfo({ display: false, message: "", type: "" })
-            } // Clear the alert when close button is clicked
-          ></button>
-        </div>
-      )}
-    </div>
+          <TextField
+            label="Name"
+            fullWidth
+            size="small"
+            sx={fieldSx}
+            error={!!errors.name}
+            helperText={errors.name?.message}
+            {...register("name", {
+              required: "Please enter your name",
+              maxLength: { value: 30, message: "30 characters max" },
+            })}
+          />
+          <TextField
+            label="Email"
+            type="email"
+            fullWidth
+            size="small"
+            sx={fieldSx}
+            error={!!errors.email}
+            helperText={errors.email && "Please enter a valid email address"}
+            {...register("email", {
+              required: true,
+              pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+            })}
+          />
+          <TextField
+            label="Subject"
+            fullWidth
+            size="small"
+            sx={fieldSx}
+            error={!!errors.subject}
+            helperText={errors.subject?.message}
+            {...register("subject", {
+              required: "Please enter a subject",
+              maxLength: { value: 75, message: "75 characters max" },
+            })}
+          />
+          <TextField
+            label="Message"
+            fullWidth
+            multiline
+            rows={6}
+            sx={fieldSx}
+            error={!!errors.message}
+            helperText={errors.message && "Please enter a message"}
+            {...register("message", { required: true })}
+          />
+
+          <Button
+            type="submit"
+            variant="outlined"
+            disabled={submitting}
+            endIcon={<SendIcon fontSize="small" />}
+            sx={{ alignSelf: "flex-start", textTransform: "none" }}
+          >
+            {submitting ? "Sending..." : "Send Message"}
+          </Button>
+        </Box>
+      </Box>
+
+      {/* Info panel */}
+      <Box
+        sx={{
+          backgroundColor: "#161b22",
+          border: "1px solid #30363d",
+          borderRadius: 2,
+          p: { xs: 3, sm: 4 },
+          minWidth: { md: 260 },
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{ mb: 0.5, fontFamily: '"Space Mono", monospace', fontSize: "0.95rem" }}
+        >
+          Get in touch
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 3, fontSize: "0.82rem" }}>
+          Open to opportunities and conversations.
+        </Typography>
+
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5 }}>
+          {INFO_ITEMS.map(({ icon, label, value, href }) => (
+            <Box key={label}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 0.25 }}>
+                {icon}
+                <Typography variant="body2" sx={{ color: "#8b949e", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  {label}
+                </Typography>
+              </Box>
+              <Link
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                underline="hover"
+                sx={{ color: "#e6edf3", fontSize: "0.875rem", "&:hover": { color: "#58a6ff" } }}
+              >
+                {value}
+              </Link>
+              {label !== INFO_ITEMS[INFO_ITEMS.length - 1].label && (
+                <Divider sx={{ borderColor: "#30363d", mt: 2.5 }} />
+              )}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

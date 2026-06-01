@@ -1,19 +1,37 @@
-body{
-    font-family: Muli, sans-serif;
-    background-color: #888c9d7a;
+body {
+  font-family: Muli, sans-serif;
+  background-color: #0d1117;
 }
 
-h1, h2, h3, h4, h5, h6 {
+* {
+  cursor: default;
+}
+
+a, button, [role="button"] {
+  cursor: pointer;
+}
+
+input, textarea {
+  cursor: text;
+}
+
+h1, h2, h3 {
   font-family: 'Space Mono', monospace;
+  color: #58a6ff;
+}
+
+h4, h5, h6 {
+  font-family: 'Space Mono', monospace;
+  color: #79c0ff;
 }
 
 html, body {
   overflow: auto;
-  scrollbar-width: none;         /* Firefox */
-  -ms-overflow-style: none;      /* IE 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-html::-webkit-scrollbar, 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none;                 /* Chrome/Safari */
+  display: none;
 }

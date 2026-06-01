@@ -4,6 +4,8 @@ import Layout from "./components/layout.js";
 import Contact from "./pages/contact.js";
 import Home from "./pages/home.js";
 import NoPage from "./pages/nopage.js";
+import ProjectsPage from "./pages/projects.js";
+import SkillsPage from "./pages/skills.js";
 import "./styles/style.css";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="skills" element={<SkillsPage />} />
+            <Route path="projects" element={<ProjectsPage />} />
             <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
           </Route>

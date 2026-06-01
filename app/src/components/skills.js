@@ -111,7 +111,22 @@ const Skills = () => {
 
   return (
     <>
-      <Typography variant="h2" sx={{ pl: 4, pb: 4 }}>
+      <Typography
+        variant="h2"
+        sx={{
+          pl: 4,
+          pb: 1,
+          "&::after": {
+            content: '""',
+            display: "block",
+            width: 56,
+            height: 3,
+            background: "linear-gradient(90deg, #58a6ff, #a78bfa)",
+            borderRadius: 2,
+            mt: 1,
+          },
+        }}
+      >
         Skills:
       </Typography>
       {yearsPassed !== null && (

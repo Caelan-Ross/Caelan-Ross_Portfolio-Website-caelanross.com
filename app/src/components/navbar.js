@@ -7,14 +7,18 @@ import { styled } from "@mui/material/styles";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo-no-background.png";
 
-const StyledNavLink = styled(NavLink)(({ theme }) => ({
+const StyledNavLink = styled(NavLink)(() => ({
   textDecoration: "none",
-  fontSize: 16,
+  fontSize: 15,
   fontWeight: 400,
-  color: "#ccc9d3",
+  color: "#8b949e",
   position: "relative",
+  transition: "color 0.2s ease",
+  "&:hover": {
+    color: "#e6edf3",
+  },
   "&.active": {
-    color: "#d0bbbb",
+    color: "#58a6ff",
     fontWeight: 500,
     "&::after": {
       content: '""',
@@ -23,18 +27,20 @@ const StyledNavLink = styled(NavLink)(({ theme }) => ({
       left: 0,
       width: "100%",
       height: 2,
-      backgroundColor: "#d0bbbb",
+      background: "linear-gradient(90deg, #58a6ff, #a78bfa)",
+      borderRadius: 2,
     },
   },
 }));
 
-const StyledAnchor = styled(Link)(({ theme }) => ({
-  fontSize: 16,
+const StyledAnchor = styled(Link)(() => ({
+  fontSize: 15,
   fontWeight: 400,
-  color: "#ccc9d3",
+  color: "#8b949e",
   textDecoration: "none",
+  transition: "color 0.2s ease",
   "&:hover": {
-    color: "#d0bbbb",
+    color: "#e6edf3",
   },
 }));
 
@@ -44,7 +50,8 @@ const Navbar = () => {
       position="fixed"
       elevation={0}
       sx={{
-        backgroundColor: "#303039",
+        backgroundColor: "#161b22",
+        borderBottom: "1px solid #30363d",
         height: "60px",
         justifyContent: "center",
       }}
@@ -61,21 +68,15 @@ const Navbar = () => {
           component="img"
           src={logo}
           alt="logo with words Caelan Ross."
-          sx={{
-            maxHeight: 50,
-            maxWidth: 200,
-            mt: "-6px",
-          }}
+          sx={{ maxHeight: 50, maxWidth: 200, mt: "-6px" }}
         />
-        <Stack direction="row" spacing={6}>
+        <Stack direction="row" spacing={4}>
           <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/skills">Skills</StyledNavLink>
+          <StyledNavLink to="/projects">Projects</StyledNavLink>
           <StyledNavLink to="/contact">Contact</StyledNavLink>
-          <StyledAnchor
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Resume
+          <StyledAnchor href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume
           </StyledAnchor>
         </Stack>
       </Container>
