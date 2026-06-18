@@ -37,8 +37,8 @@ const About = () => {
         sx={{ fontSize: "1.1rem", lineHeight: 1.8, color: "rgba(230, 237, 243, 0.85)" }}
       >
         I'm based in <strong>Sherwood Park, Alberta</strong>, with over{" "}
-        <strong>4 years of professional experience</strong> in full-stack
-        development and a <strong>2-year Diploma in Full-Stack Web Development</strong>{" "}
+        <strong>4 years of professional experience</strong> in Full Stack
+        Development and a <strong>2-year Diploma in Full-Stack Web Development</strong>{" "}
         from the <strong>University of Alberta</strong>.
         <br />
         <br />

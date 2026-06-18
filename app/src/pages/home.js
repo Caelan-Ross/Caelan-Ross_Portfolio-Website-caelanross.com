@@ -220,7 +220,7 @@ const Home = () => {
         align="center"
         sx={{ mb: 6, color: "text.secondary" }}
       >
-        Web Developer
+        Full Stack Developer
       </Typography>
 
       {/* About Me */}
